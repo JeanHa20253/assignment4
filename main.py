@@ -10,14 +10,12 @@ def image_processing(image_file):
     return watermarked_image
 
 
-def watermark_text(watermarked_image,position,text):
-
-    #watermark text needs input
+def watermark_text(watermarked_image,position,text,color):
     pen= ImageDraw.Draw(watermarked_image)
 
     text=str(text)
     font= ImageFont.truetype(
-        font=r'C:\Users\Dell\Downloads\Source_Sans_Pro\SourceSansPro-BoldItalic.ttf',
+        font=r'SourceSansPro-Light.ttf',
         size=50
     )
 
@@ -51,7 +49,7 @@ def watermark_text(watermarked_image,position,text):
 
     pen.text(coordinate,
              text= text,
-             fill='#CDDEFF',
+             fill=color,
              font=font)
 
     # watermarked_image.show()
